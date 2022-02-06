@@ -1,0 +1,33 @@
+/* Body */
+body {
+    background: #F5F4EF;
+    color: rgb(197, 197, 197);
+    font-size: 12px; /* Base font size: 14px */
+    font-family: Monaco;
+    line-height: 0.800;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+	
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+/***** Layout *****/
+.body {clear: both; margin: 20px;}
+
+#content {
+	background: rgb(28, 28, 28);
+	margin-bottom: 2em;
+	overflow: hidden;
+	padding: 0px 20px;
+	/* width: 760px; */
+	
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
