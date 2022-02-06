@@ -1,9 +1,12 @@
+/* Imports*/
+@import url(//db.onlinewebfonts.com/c/9a6fac95e27cc0dd0c5f8caf4c753df4?family=MONACO);
+
 /* Body */
 body {
     background: #F5F4EF;
     color: rgb(197, 197, 197);
-    font-size: 12px; /* Base font size: 14px */
-    font-family: Monaco;
+    font-size: 14px;
+    font-family: monaco, Consolas, "Lucida Console", monospace;
     line-height: 0.800;
     margin: 0;
     padding: 0;
