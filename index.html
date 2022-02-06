@@ -34,8 +34,12 @@
         <span style="color:rgb(255, 0, 91)">$ </span>
     </p>
     <br>
-    <script>
-        fetch('pogoda.json')
+    <script type="module">
+        import { request } from "https://cdn.pika.dev/@octokit/request";
+        const result = await request("GET /gists/a335a5639968235980dde8c4abbaa22d");
+        const rawUrl = result.data.files['pogoda.json'].raw_url
+        console.log(rawUrl);
+        fetch(rawUrl)
             .then(function (response) {
                 return response.json();
             })
