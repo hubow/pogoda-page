@@ -35,11 +35,11 @@
     </p>
     <br>
     <script type="module">
-        import { request } from "https://cdn.pika.dev/@octokit/request";
-        const result = await request("GET /gists/a335a5639968235980dde8c4abbaa22d");
-        const rawUrl = result.data.files['pogoda.json'].raw_url
-        console.log(rawUrl);
-        fetch(rawUrl)
+        // import { request } from "https://cdn.pika.dev/@octokit/request";
+        // const result = await request("GET /gists/a335a5639968235980dde8c4abbaa22d");
+        // const rawUrl = result.data.files['pogoda.json'].raw_url
+        // console.log(rawUrl);
+        fetch('https://gist.githubusercontent.com/hubow/a335a5639968235980dde8c4abbaa22d/raw/pogoda.json')
             .then(function (response) {
                 return response.json();
             })
