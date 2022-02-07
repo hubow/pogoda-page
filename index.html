@@ -19,13 +19,13 @@
         <span style="color:rgb(255, 0, 91)">$ </span>
         <span>pogoda 'zielona góra'</span>
     </p>
-    <p>Data: <span id="today"></span></p>
+    <p>Temperatura: <span id="temp" class="data"></span></p>
+    <p>Ciśnienie: <span id="press" class="data"></span></p>
+    <p>Wilgotność: <span id="hum" class="data"></span></p>
+    <p>Wiatr: <span id="wind" class="data"></span></p>
+    <p>Temperatura odczuwalna: <span id="apptemp" class="data"></span></p>
     <p>Data pomiaru: <span id="time"></span> <span id="date"></span></p>
-    <p>Temperatura: <span id="temp"></span>°C</p>
-    <p>Ciśnienie: <span id="press"></span> hPa</p>
-    <p>Wilgotność: <span id="hum"></span> %</p>
-    <p>Wiatr: <span id="wind"></span> km/h</p>
-    <p>Temperatura odczuwalna: <span id="apptemp"></span>°C</p>
+    <p>Data: <span id="today"></span></p>
     <br>
     <br>
     <p>
@@ -51,16 +51,16 @@
                 console.log('error: ' + err);
             });
         function appendData(data) {
-            document.getElementById("temp").innerHTML = data['temp'];
-            document.getElementById("press").innerHTML = data['press'];
-            document.getElementById("hum").innerHTML = data['hum'];
-            document.getElementById("wind").innerHTML = data['wind'];
-            document.getElementById("apptemp").innerHTML = data['appTemp'];
+            document.getElementById("temp").innerHTML = data['temp'] + '°C';
+            document.getElementById("press").innerHTML = data['press'] + ' hPa';
+            document.getElementById("hum").innerHTML = data['hum'] + ' %';
+            document.getElementById("wind").innerHTML = data['wind'] + ' km/h';
+            document.getElementById("apptemp").innerHTML = data['appTemp'] + '°C';
             document.getElementById("time").innerHTML = data['time'];
             document.getElementById("date").innerHTML = data['date'];
         }
-        const timeElapsed = Date.now();
-        const today = (new Date(timeElapsed).toLocaleDateString());
+        var timeElapsed = Date.now();
+        var today = (new Date(timeElapsed).toISOString().slice(0,10));
         console.log(today)
         document.getElementById("today").innerHTML = today
     </script>

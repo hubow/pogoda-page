@@ -12,7 +12,11 @@ body {
     padding: 0;
     text-align: left;
 }
-	
+
+span.data { 
+    color:#fff281
+}
+
 /* HTML5 tags */
 header, section, footer,
 aside, nav, article, figure {
