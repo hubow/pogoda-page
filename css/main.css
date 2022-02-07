@@ -1,12 +1,13 @@
 /* Imports*/
-@import url(//db.onlinewebfonts.com/c/9a6fac95e27cc0dd0c5f8caf4c753df4?family=MONACO);
+/* @import url(//db.onlinewebfonts.com/c/9a6fac95e27cc0dd0c5f8caf4c753df4?family=MONACO); */
+@import url(https://fonts.googleapis.com/css?family=PT+Mono&subset=latin);
 
 /* Body */
 body {
     background: #F5F4EF;
     color: rgb(197, 197, 197);
     font-size: 14px;
-    font-family: monaco, Consolas, "Lucida Console", monospace;
+    font-family: 'PT Mono';
     line-height: 0.800;
     margin: 0;
     padding: 0;
