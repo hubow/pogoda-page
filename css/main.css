@@ -1,41 +1,62 @@
-/* Imports*/
-/* @import url(//db.onlinewebfonts.com/c/9a6fac95e27cc0dd0c5f8caf4c753df4?family=MONACO); */
 @import url(https://fonts.googleapis.com/css?family=PT+Mono&subset=latin);
 
-/* Body */
-body {
-    background: #F5F4EF;
-    color: rgb(197, 197, 197);
-    font-size: 14px;
-    font-family: 'PT Mono';
-    line-height: 0.800;
-    margin: 0;
-    padding: 0;
-    text-align: left;
+.window {
+  background: #b4b4b4;
+  opacity: 0.9;
+  width: 760px;
+  margin: 10px auto;
+  padding: 0px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;  
+  box-shadow: 5px 5px 20px gray;
+  
+  &.dark {
+    background: #273138;
+  }
+}
+
+.buttons {
+  padding-left: 20px;
+  padding-top: 20px;
+
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #f9f9f9;
+  border-radius: 50%;
+  margin: 0px 4px 0px 0px;
+  
+  &.red {
+    background: #FF6057;
+    border: 1px solid #E14640;
+  }
+
+  &.amber {
+    background: #FFBD2E;
+    border: 1px solid #DFA123;
+  }
+
+  &.green {
+    background: #27C93F;
+    border: 1px solid #1DAD2B;
+  }
 }
 
 span.data { 
     color:#fff281
 }
 
-/* HTML5 tags */
-header, section, footer,
-aside, nav, article, figure {
-	display: block;
+.content {
+    /*background: #F5F4EF;*/
+    color: rgb(197, 197, 197);
+    font-size: 14px;
+    font-family: 'PT Mono';
+    line-height: 0.800;
+    margin: 0;
+    padding: 10px 0px;
+    text-align: left;
 }
-
-/***** Layout *****/
-.body {clear: both; margin: 20px;}
-
-#content {
-	background: rgb(28, 28, 28);
-	margin-bottom: 2em;
-	overflow: hidden;
-	padding: 0px 20px;
-	/* width: 760px; */
-	
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-}
-

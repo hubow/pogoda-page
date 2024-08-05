@@ -1,70 +1,69 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-        <meta charset="utf-8" />
-        <title>Pogoda ZG</title>
-        <link rel="stylesheet" href="./css/main.css" />
+    <meta charset="utf-8" />
+    <title>Pogoda ZG</title>
+    <link rel="stylesheet" href="./css/main.css" />
 </head>
 
 <body id="index" class="home">
+    <div class="window dark">
+        <div class="buttons">
+            <div class="dot red"></div>
+            <div class="dot amber"></div>
+            <div class="dot green"></div>
+            <section id="content1" class="content">
+                <p>
+                    <span style="color:rgb(255, 0, 91)">hubow</span>
+                    <span style="color:rgb(4, 138, 199);">~ </span>
+                    <span style="color:rgb(255, 0, 91)">$ </span>
+                    <span>pogoda 'zielona góra'</span>
+                </p>
+                <p>Temperatura: <span id="temp" class="data"></span></p>
+                <p>Ciśnienie: <span id="press" class="data"></span></p>
+                <p>Wilgotność: <span id="hum" class="data"></span></p>
+                <p>Wiatr: <span id="wind" class="data"></span></p>
+                <p>Temperatura odczuwalna: <span id="apptemp" class="data"></span></p>
+                <p>Data pomiaru: <span id="time"></span> <span id="date"></span></p>
+                <p>Data: <span id="today"></span></p>
+                <br>
+                <p>
+                    <span style="color:rgb(255, 0, 91)">hubow</span>
+                    <span style="color:rgb(4, 138, 199);">~ </span>
+                    <span style="color:rgb(255, 0, 91)">$ </span>
+                </p>
+                <br>
+                <script type="module">
+                    fetch('https://gist.githubusercontent.com/hubow/a335a5639968235980dde8c4abbaa22d/raw/pogoda.json')
+                        .then(function (response) {
+                            return response.json();
+                        })
+                        .then(function (data) {
+                            appendData(data);
+                            console.log(data);
+                        })
+                        .catch(function (err) {
+                            console.log('error: ' + err);
+                        });
 
-<section id="content" class="body">
-    <p align="left">
-        <object data="./images/dots.svg"></object>
-    </p>
-    <br>
-    <p>
-        <span style="color:rgb(255, 0, 91)">hubow</span>
-        <span style="color:rgb(4, 138, 199);">~ </span>
-        <span style="color:rgb(255, 0, 91)">$ </span>
-        <span>pogoda 'zielona góra'</span>
-    </p>
-    <p>Temperatura: <span id="temp" class="data"></span></p>
-    <p>Ciśnienie: <span id="press" class="data"></span></p>
-    <p>Wilgotność: <span id="hum" class="data"></span></p>
-    <p>Wiatr: <span id="wind" class="data"></span></p>
-    <p>Temperatura odczuwalna: <span id="apptemp" class="data"></span></p>
-    <p>Data pomiaru: <span id="time"></span> <span id="date"></span></p>
-    <p>Data: <span id="today"></span></p>
-    <br>
-    <br>
-    <p>
-        <span style="color:rgb(255, 0, 91)">hubow</span>
-        <span style="color:rgb(4, 138, 199);">~ </span>
-        <span style="color:rgb(255, 0, 91)">$ </span>
-    </p>
-    <br>
-    <script type="module">
-        // import { request } from "https://cdn.pika.dev/@octokit/request";
-        // const result = await request("GET /gists/a335a5639968235980dde8c4abbaa22d");
-        // const rawUrl = result.data.files['pogoda.json'].raw_url
-        // console.log(rawUrl);
-        fetch('https://gist.githubusercontent.com/hubow/a335a5639968235980dde8c4abbaa22d/raw/pogoda.json')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                appendData(data);
-            console.log(data);
-            })
-            .catch(function (err) {
-                console.log('error: ' + err);
-            });
-        function appendData(data) {
-            document.getElementById("temp").innerHTML = data['temp'] + '°C';
-            document.getElementById("press").innerHTML = data['press'] + ' hPa';
-            document.getElementById("hum").innerHTML = data['hum'] + ' %';
-            document.getElementById("wind").innerHTML = data['wind'] + ' km/h';
-            document.getElementById("apptemp").innerHTML = data['appTemp'] + '°C';
-            document.getElementById("time").innerHTML = data['time'];
-            document.getElementById("date").innerHTML = data['date'];
-        }
-        var timeElapsed = Date.now();
-        var today = (new Date(timeElapsed).toISOString().slice(0,10));
-        console.log(today)
-        document.getElementById("today").innerHTML = today
-    </script>
-</section>
-
+                    function appendData(data) {
+                        document.getElementById("temp").innerHTML = data['temp'] + '°C';
+                        document.getElementById("press").innerHTML = data['press'] + ' hPa';
+                        document.getElementById("hum").innerHTML = data['hum'] + ' %';
+                        document.getElementById("wind").innerHTML = data['wind'] + ' km/h';
+                        document.getElementById("apptemp").innerHTML = data['appTemp'] + '°C';
+                        document.getElementById("time").innerHTML = data['time'];
+                        document.getElementById("date").innerHTML = data['date'];
+                    }
+                    var timeElapsed = Date.now();
+                    var today = (new Date(timeElapsed).toISOString().slice(0, 10));
+                    console.log(today)
+                    document.getElementById("today").innerHTML = today
+                </script>
+            </section>
+        </div>
+    </div>
 </body>
+
 </html>
